@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap dependencies -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class = "navbar navbar-expand-md navbar-dark bg-dark">
+        <!-- Create a button for small screens -->
+        <button class = "navbar-toggler" data-toggle="collapse" data-target = "#collapse_target">
+            <span class = "navbar-toggler-icon"> </span> 
+        </button> 
+        <!-- Anchor targets are set to _top so that they do not open in the iframe object only -->
+        <div class="collapse navbar-collapse" id="collapse_target">    
+            <!-- Website Logo -->
+            <a href = "index.html" class = "navbar-brand" target="_top"> Latitude </a>
+            <!-- Link on the right side of the browser window -->
+            <ul class = "navbar-nav ml-auto">   
+                <!--  Drop-down menu to see the links to the 4 plots available -->
+                <li class="nav-item">
+                    <ul> 
+                        <div class="dropdown">
+                            <button class="dropbtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Plots
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="max_temp.html" target="_top"> Max Temperature </a>
+                                <a class="dropdown-item" href="humidity.html" target="_top"> Humidity </a>
+                                <a class="dropdown-item" href="cloudiness.html" target="_top"> Cloudiness </a>
+                                <a class="dropdown-item" href="wind_speed.html" target="_top"> Wind Speed </a>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <!-- Link to show raw data used for the plots in tabular form -->
+                <li class="nav-item">
+                    <a href="data.html" target="_top"> Data </a>
+                </li>
+                <!-- Link to show all 4 plots in an image grid -->
+                <li class="nav-item">
+                    <a href="comparisson.html" target="_top"> Comparisson </a>
+                </li>
+            </ul>
+        </div>
+</body>
+</html>
