@@ -197,10 +197,9 @@ def scrape():
 
     # create a dictionary list that will be used for the mongodb database
     mars_data_list_dict = [
-        {"news_title ": latest_news[1], 
-        "news_p" : latest_news[2]
-        },
-        { "featured_image_url": image_of_day_url},
+        {"news_title ": latest_news[1],
+        "news_p" : latest_news[2]},
+        {"featured_image_url" : image_of_day_url},
         {"mars_weather" : latest_tweet},
         {"mars_facts_html" : html_table},
         {"hemisphere_image_urls": image_of_hemispehres_dict}
