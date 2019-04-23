@@ -13,11 +13,16 @@
         aside {
             width: 40%;
             padding-left: 20px;
-            margin-left: 200px;
+            margin-left: 100px;
             float: right;
             box-shadow: inset 5px 0 5px -5px #29627e;
             font-style: italic;
             color: #29627e;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 
@@ -45,7 +50,7 @@
 
         <div class="row">
             <!-- Featured image-->
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <h2>  Featured Mars Image </h2>
                 <img src = "{{data.featured_image_url}}" style = "float:left; margin-right:10px; margin-bottom: 5px;">
             </div>
@@ -55,16 +60,16 @@
                 <h3> Current Weather on Mars </h3>
                 <small> {{data.mars_weather}}</small>
 
-                <br>
+                <br> <br>
 
                 <!--Input HTML Table -->
                 <h3> Mars Facts </h3>
-                <p>{{data.mars_facts_html}}</p>
+                {{data.mars_facts_html | safe}}
             </aside>
 
         </div>
 
-        <br> <br>
+        <br>
 
         <!-- Create image grid for hemisphere -->
         <h1 style = "text-align: center;"> Mars Hemispheres </h1>
@@ -79,6 +84,5 @@
             </div>
         </div>
     </div> 
-    </div>
 </body>
 </html>
