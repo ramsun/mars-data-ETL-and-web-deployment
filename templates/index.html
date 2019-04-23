@@ -10,9 +10,18 @@
 </head>
 <body>
     <style>
-        
-    
+        aside {
+            width: 40%;
+            padding-left: 20px;
+            margin-left: 200px;
+            float: right;
+            box-shadow: inset 5px 0 5px -5px #29627e;
+            font-style: italic;
+            color: #29627e;
+        }
     </style>
+
+    <!-- Contents of Webpage -->
     <div class = "container-fluid">
         <!-- Create Scrape Button-->
         <div class = "jumbotron text-center">
@@ -23,24 +32,36 @@
         </div>
 
         <!-- Data Scraped from NASA website -->
-        <!-- Latest Mars News -->
         <div class="row">
+            <!-- Latest Mars News -->
             <div class="col-md-12">
-                <h1>  Latest Mars News </h>
-                <h2> {{data.news_title}}</h2>
+                <h2>  Latest Mars News </h2>
+                <h3> {{data.news_title}}</h3>
                 <small> {{data.news_p}}</small>
             </div>
         </div>
 
         <br>
 
-        <!-- Featured image-->
         <div class="row">
-            <div class="col-md-6">
-                <h1>  Featured Mars Image </h>
-                <br>
-                <img src = "{{data.featured_image_url}}">
+            <!-- Featured image-->
+            <div class="col-sm-4">
+                <h2>  Featured Mars Image </h2>
+                <img src = "{{data.featured_image_url}}" style = "float:left; margin-right:10px; margin-bottom: 5px;">
             </div>
+
+            <aside> 
+                <!-- Latest Mars Tweet -->
+                <h3> Current Weather on Mars </h3>
+                <small> {{data.mars_weather}}</small>
+
+                <br>
+
+                <!--Input HTML Table -->
+                <h3> Mars Facts </h3>
+                <p>{{data.mars_facts_html}}</p>
+            </aside>
+
         </div>
 
         <br> <br>
@@ -57,8 +78,7 @@
                 {% endfor %}
             </div>
         </div>
-
-        
+    </div> 
     </div>
 </body>
 </html>
