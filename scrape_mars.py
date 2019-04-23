@@ -193,7 +193,7 @@ def scrape():
     html_table = scrape_mars_data()
 
     # Scrape the links to the hemispheres of mars
-    image_of_hemispehres_dict = scrape_hemisphere_images()
+    image_of_hemispehres_list_dict = scrape_hemisphere_images()
 
     # create a dictionary that will be used for the mongodb database
     mars_data_dict = { 
@@ -202,8 +202,8 @@ def scrape():
         "featured_image_url" : image_of_day_url,
         "mars_weather" : latest_tweet,
         "mars_facts_html" : html_table,
-        "hemisphere_image_urls": image_of_hemispehres_dict
-    }
+        "hemispheres" : image_of_hemispehres_list_dict
+        }
 
     return mars_data_dict
 
