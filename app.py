@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 
-# Define the home route
 # Will render a page from the index.html template
 @app.route("/")
 def index():
@@ -18,7 +17,6 @@ def index():
     queried_data = mongo.db.mars_data.find_one()
     return render_template("index.html", data = queried_data)
 
-# Define the scrape route
 # Will scrape the latest mars data from Nasa's website and load it into
 # the MongoDB collection.
 @app.route("/scrape")
@@ -29,7 +27,7 @@ def scraper():
     # Empty the contents of the database to prevent duplicate data
     mongo.db.drop_collection(mars_data_collection)
 
-    # Store the latest URL data into the d
+    # Store the latest URL data into the dict
     data_dict = scrape_mars.scrape()
     
     # Update the database

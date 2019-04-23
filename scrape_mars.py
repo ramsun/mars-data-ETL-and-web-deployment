@@ -108,8 +108,7 @@ def scrape_mars_data():
     
     #convert the dataframe to html and remove extra newlines
     html_table = mars_data_df.to_html()
-    html_table = html_table.replace('\n', '')
-
+    
     return html_table
     # save the dataframe to an html file
     # mars_data_df.to_html('table.html')
