@@ -13,22 +13,48 @@
         
     
     </style>
-
-    <div class = "container">
+    <div class = "container-fluid">
+        <!-- Create Scrape Button-->
         <div class = "jumbotron text-center">
             <h1> Mission To Mars </h1>
             <p>
-                <a class = "btn btn-primary btn-lg" href = "/scrape" role="button"> Scrape </a>
+                <a class = "btn btn-primary btn-lg" href = "/scrape" role="button"> Scrape For Latest News </a>
             </p>
         </div>
 
         <!-- Data Scraped from NASA website -->
-
-        <div class="row" id = "nasa-data">
+        <!-- Latest Mars News -->
+        <div class="row">
             <div class="col-md-12">
                 <h1>  Latest Mars News </h>
                 <h2> {{data.news_title}}</h2>
                 <small> {{data.news_p}}</small>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Featured image-->
+        <div class="row">
+            <div class="col-md-6">
+                <h1>  Featured Mars Image </h>
+                <br>
+                <img src = "{{data.featured_image_url}}">
+            </div>
+        </div>
+
+        <br> <br>
+
+        <!-- Create image grid for hemisphere -->
+        <h1 style = "text-align: center;"> Mars Hemispheres </h1>
+        <div class="map">
+            <div class="row">
+                {% for hemisphere in data.hemispheres %}
+                <div class="col-sm-6">
+                    <img class="img-fluid" class="img-responsive" src="{{hemisphere['img_url']}}">
+                    <div class="desc" style = "text-align : center;"> <strong> {{hemisphere['title']}} </strong> </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
 
