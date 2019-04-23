@@ -106,12 +106,10 @@ def scrape_mars_data():
     mars_data_df.columns = ['Description','Value']
     mars_data_df.set_index('Description', inplace=True)
     
-    #convert the dataframe to html and remove extra newlines
+    # convert the dataframe to html and remove extra newlines
     html_table = mars_data_df.to_html()
     
     return html_table
-    # save the dataframe to an html file
-    # mars_data_df.to_html('table.html')
 
 
 # returns a dictionary of decriptions and image urls
@@ -202,7 +200,7 @@ def scrape():
         "mars_weather" : latest_tweet,
         "mars_facts_html" : html_table,
         "hemispheres" : image_of_hemispehres_list_dict
-        }
+    }
 
     return mars_data_dict
 
